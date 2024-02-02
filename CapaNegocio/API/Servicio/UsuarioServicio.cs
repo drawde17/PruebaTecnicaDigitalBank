@@ -8,6 +8,11 @@ namespace API.Servicio
 {
     public class UsuarioServicio : RepositorioDatos, IUsuarioServicio
     {
+        /// <summary>
+        /// Realiza validacion para adicionar un usuario
+        /// </summary>
+        /// <param name="user">Usuario</param>
+        /// <returns>Respuesta de serivio</returns>
         public Response<bool> Adicionar(UsuarioDTO user)
         {
             try
@@ -39,6 +44,11 @@ namespace API.Servicio
             }
         }
 
+        /// <summary>
+        /// Realiza validacion para modificar un usuario
+        /// </summary>
+        /// <param name="user">Usuario</param>
+        /// <returns>Respuesta de serivio</returns>
         public Response<bool> Modificar(UsuarioDTO user)
         {
             try
@@ -69,6 +79,10 @@ namespace API.Servicio
             }
         }
 
+        /// <summary>
+        /// Realiza validacion para consultar los usuarios
+        /// </summary>
+        /// <returns>Respuesta de serivio</returns>
         public Response<IEnumerable<UsuarioDTO>> Consultar()
         {
             try
@@ -91,6 +105,11 @@ namespace API.Servicio
             }
         }
 
+        /// <summary>
+        /// Realiza validacion para eliminar un usuario
+        /// </summary>
+        /// <param name="id">Identificador de usuario</param>
+        /// <returns>Respuesta de serivio</returns>
         public Response<bool> Eliminar(int id)
         {
             try

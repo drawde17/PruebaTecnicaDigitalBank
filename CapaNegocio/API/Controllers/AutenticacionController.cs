@@ -20,6 +20,10 @@ namespace API.Controllers
             _config = options.Value;
         }
 
+        /// <summary>
+        /// Servicio para generar Token
+        /// </summary>
+        /// <returns>Respuesta de servicio</returns>
         [AllowAnonymous]
         [HttpPost(Name = "ObtenerToken")]
         public Response<string> ObtenerToken()

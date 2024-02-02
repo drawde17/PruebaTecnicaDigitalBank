@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <h1>Usuarios</h1>
+    <button type="button" (click)="AdcionarUsuario()">Adicionar</button>
+    <table id="tablaUsuarios" class="table table-striped"> 
+      <thead> 
+        <tr> 
+          <th>Nombre</th> 
+          <th>Fecha de nacimiento</th> 
+          <th>Sexo</th> 
+          <th>Accion</th> 
+        </tr> 
+      </thead> 
+      <tbody> 
+        <tr *ngFor="let usuario of usuarios"> 
+          <td>{{usuario.Nombre}}</td> 
+          <td>{{darFormatoFecha(usuario.FechaNacimiento)}}</td> 
+          <td>{{usuario.Sexo}}</td>
+          <td><button class="btn btn-link" (click)="ModificarUsuario(usuario)">Modificar</button> - <button class="btn btn-link" (click)="EliminarUsuario(usuario)">Eliminar</button></td>
+        </tr> 
+      </tbody> 
+    </table>
+    Total registros {{totalRegistros}}, Pagina {{PaginaActual}} de {{totalPaginas}}
+   <div>Paginas<button *ngFor="let paginacionDato of paginacionDatos" class="btn btn-link" (click)="CambiarPagina(paginacionDato)">{{paginacionDato.pagina}}</button></div>
+
+   <button class="btn btn-link" (click)="guardarArchivoDeTexto()">Generar archivo TXT</button>
+   
+  </div>
+</div>

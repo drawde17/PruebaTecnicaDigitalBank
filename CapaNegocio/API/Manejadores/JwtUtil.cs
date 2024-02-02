@@ -13,6 +13,11 @@ namespace API.Manejadores
         {
             _config = config;
         }
+
+        /// <summary>
+        /// Metodo encargado de generar autenticacion JWT
+        /// </summary>
+        /// <returns>Respuesta de servicio</returns>
         public Response<string> GenerateJSONWebToken()
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.Jwt.Key));
